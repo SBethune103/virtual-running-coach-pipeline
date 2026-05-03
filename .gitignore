@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+data/raw/results.csv
+data/raw/run_ww_2019_d.parquet
+data/raw/run_ww_2019_m.parquet
+data/raw/run_ww_2019_q.parquet
+data/raw/run_ww_2019_w.parquet
+data/raw/run_ww_2020_d.parquet
+data/raw/run_ww_2020_m.parquet
+data/raw/run_ww_2020_q.parquet
+data/raw/run_ww_2020_w.parquet
+data/raw/test.csv
+data/raw/train.csv
+data/raw/TWO_CENTURIES_OF_UM_RACES.csv
