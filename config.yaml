@@ -1,5 +1,5 @@
 # =============================================
-# Running Coach Project Configuration
+# Virtual Running Coach - Configuration
 # =============================================
 
 paths:
@@ -9,53 +9,37 @@ paths:
   cache: "data/cache"
   logs: "logs"
 
-# Embedding & Vector Store Settings
+# Embedding & Vector Store
 embedding:
-  model_name: "all-MiniLM-L6-v2"          # Fast & good starting model
-  # Alternative strong model: "all-mpnet-base-v2"
+  model_name: "all-MiniLM-L6-v2"
   chunk_size: 800
   chunk_overlap: 100
-  batch_size: 500
-  collection_name: "running_coach_docs"
+  batch_size: 512
+  collection_name: "running_coach"
 
 # RAG Settings
 rag:
-  top_k: 8
-  similarity_threshold: 0.3
-  hybrid_search: true                     # Combine vector + keyword search
+  top_k: 6
+  similarity_threshold: 0.25
 
 # Strava Configuration
 strava:
-  client_id: ""                           # Fill from .env or here (not recommended)
-  client_secret: ""                       # Fill from .env
   redirect_uri: "http://localhost:8501/callback"
-  scopes:
-    - activity:read_all
-    - profile:read_all
-  token_file: "data/cache/strava_tokens.json"   # Per-user tokens later
-
-# Data Sources
-data_sources:
-  enable_strava: true
-  enable_kaggle_datasets: true
-  enable_pmc_papers: true
+  token_file: "data/cache/strava_tokens.json"
 
 # Processing Settings
 preprocessing:
-  max_papers_to_process: 50000            # Start smaller, scale up
-  tabular_batch_size: 100000
-  min_run_distance_km: 1.0
+  max_papers: 20000
+  tabular_batch_size: 50000
 
-# LLM Settings (for generation)
+# LLM Settings (for response generation)
 llm:
-  provider: "groq"                        # Options: groq, openai, ollama, huggingface
-  model_name: "llama-3.1-70b-versatile"  # or mixtral, gemma2, etc.
+  provider: "groq"                    # Change to "openai", "ollama", etc. later
+  model_name: "llama-3.1-70b-versatile"
   temperature: 0.7
   max_tokens: 1024
 
 # UI Settings
 ui:
   app_title: "🏃‍♂️ Virtual Running Coach"
-  default_page: "Coach Chat"
-  enable_conversation_history: true
-  max_history_messages: 20
+  enable_history: true
