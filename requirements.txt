@@ -12,16 +12,15 @@ unstructured[pdf]==0.15.12
 # Embeddings & Vector DB
 sentence-transformers==3.1.1
 chromadb==0.5.15
-faiss-cpu==1.10.1
 
-# RAG & LLM
+# RAG & LLM - Using compatible versions
 langchain==0.3.7
 langchain-community==0.3.7
 langchain-chroma==0.1.4
 huggingface-hub==0.26.2
 
-# Strava API
-stravalib==1.6.0
+# Strava API - Using latest to avoid old pydantic pin
+stravalib>=1.6.0
 
 # Streamlit UI
 streamlit==1.39.0
@@ -33,12 +32,7 @@ python-dotenv==1.0.1
 PyYAML==6.0.2
 tqdm==4.66.5
 requests==2.32.3
-oauthlib==3.2.2
 
 # Kaggle & Datasets
 kaggle==1.6.17
 datasets==3.0.1
-
-# Optional but useful
-ipykernel==6.29.5
-jupyter==1.1.1
